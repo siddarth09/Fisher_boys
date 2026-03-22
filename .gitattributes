@@ -1,0 +1,3 @@
+mujoco/models/assets/*.obj filter=lfs diff=lfs merge=lfs -text
+mujoco/models/assets/*.stl filter=lfs diff=lfs merge=lfs -text
+mujoco/models/assets/*.png filter=lfs diff=lfs merge=lfs -text
