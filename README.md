@@ -5,16 +5,26 @@ MuJoCo simulation environment for the AI for Industry Challenge. Contains the UR
 > **Note:** Evaluation runs in Gazebo. MuJoCo is for training and development only. Your final submission must work via standard ROS 2 topics.
 
 ## Getting Started
-
-### 1. Clone and pull assets
+> **Note:** Only use **mjcf/** folder now.
+### 1. Clone and move assets
 
 ```bash
 git clone <repo-url>
-cd fisher_boys
-git lfs pull   # Downloads mesh/texture files from LFS
+cd Fisher_boys
+mv /home/user/Fisher_boys/mjcf /home/user/ws_aic/src/aic/aic_utils/aic_mujoco/
 ```
 
-### 2. Source the AIC workspace
+Ensure that final **aic_mujoco/** folder looks like
+├── launch      
+├── mjcf     # ensure it has total 70 files
+├── scripts     
+└── CMakeLists.txt 
+├── mujoco.repos      
+├── package.xml   
+└── README.md 
+
+
+### 2. Follow steps from Part 2 in MuJoCo with ROS 2 Control https://github.com/intrinsic-dev/aic/blob/main/aic_utils/aic_mujoco/README.md
 
 ```bash
 source ~/ws_aic/install/setup.bash
@@ -22,7 +32,7 @@ source ~/ws_aic/install/setup.bash
 
 This sets `MUJOCO_PLUGIN_PATH` which is required for the cable elasticity plugin.
 
-### 3. Launch with ROS 2 (Recommended)
+### 3. Launching MuJoCo with ros2_control
 
 ```bash
 # Terminal 1: Zenoh router
@@ -37,7 +47,7 @@ ros2 launch aic_mujoco aic_mujoco_bringup.launch.py
 
 # Terminal 3: Teleop (optional)
 export RMW_IMPLEMENTATION=rmw_zenoh_cpp
-export ZENOH_CONFIG_OVERRIDE='transport/shared_memory/enabled=true'
+export ZENOH_CONFIG_OVERRIDE='transport/shared_memory/enabled=false'
 ros2 run aic_teleoperation cartesian_keyboard_teleop
 ```
 
@@ -65,14 +75,14 @@ mujoco.mj_forward(model, data)
 mujoco.viewer.launch(model, data)
 ```
 
-## File Structure
+## MJCF folder Structure
 
 ```
-mujoco/models/
+mjcf/
 ├── scene.xml         # Load this — includes robot + world, sets integrator/timestep
 ├── aic_robot.xml     # UR5e + gripper with actuators, sensors, F/T sensor, cameras
 ├── aic_world.xml     # Enclosure, floor, task board, cable with elasticity plugin
-└── assets/           # OBJ/STL meshes and PNG textures (tracked with git-lfs)
+└── 67 .obj + .stl + .png files           # OBJ/STL meshes and PNG textures
 ```
 
 ## Actuators
