@@ -26,12 +26,6 @@ Ensure that final **aic_mujoco/** folder looks like </br>
 
 ### 2. Follow steps from Part 2 in MuJoCo with ROS 2 Control (https://github.com/intrinsic-dev/aic/blob/main/aic_utils/aic_mujoco/README.md)
 
-```bash
-source ~/ws_aic/install/setup.bash
-```
-
-This sets `MUJOCO_PLUGIN_PATH` which is required for the cable elasticity plugin.
-
 ### 3. Launching MuJoCo with ros2_control
 
 ```bash
