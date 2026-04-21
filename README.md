@@ -24,7 +24,7 @@ Ensure that final **aic_mujoco/** folder looks like </br>
 └── README.md </br>
 
 
-### 2. Follow steps from Part 2 in MuJoCo with ROS 2 Control https://github.com/intrinsic-dev/aic/blob/main/aic_utils/aic_mujoco/README.md
+### 2. Follow steps from Part 2 in MuJoCo with ROS 2 Control (https://github.com/intrinsic-dev/aic/blob/main/aic_utils/aic_mujoco/README.md)
 
 ```bash
 source ~/ws_aic/install/setup.bash
