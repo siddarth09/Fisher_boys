@@ -16,6 +16,7 @@ mv /home/user/Fisher_boys/mjcf /home/user/ws_aic/src/aic/aic_utils/aic_mujoco/
 
 Ensure that final **aic_mujoco/** folder looks like </br>
 ```
+aic_mujoco/
 ├── launch      
 ├── mjcf       # ensure it has total 70 files 
 ├── scripts    
